@@ -1,24 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import AddTach from './component/addTache';
+import ListTache from './component/listeTache';
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
+import TachHeader from './component/header';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Provider store={store}>
+       <TachHeader/>
+       <footer>
+          <AddTach/>
+        </footer>
+     <div className="container-fluid d-flex justify-content-center" id="conte">
+        <article>
+        <ListTache />
+      </article>
     </div>
+    </Provider>
   );
 }
 
